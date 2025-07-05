@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don't Worry Swegma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cherry Swash', cursive;
+      background: #ffe6f0;
+      overflow-x: hidden;
+      color: #d63384;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-top: 1em;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      padding: 2em;
+    }
+
+    .cute-jumper {
+      font-size: 4em;
+      animation: jump 1.2s infinite ease-in-out;
+    }
+
+    @keyframes jump {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-25px);
+      }
+    }
+
+    .cherry-blossom {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/wJx4jJy.png') no-repeat center/contain;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Don't Worry, Swegma 💖</h1>
+  <div class="container">
+    <div class="cute-jumper">(≧◡≦) ♡</div>
+    <div class="cute-jumper">ʕ•ᴥ•ʔ</div>
+    <div class="cute-jumper">(｡♥‿♥｡)</div>
+    <div class="cute-jumper">(づ｡◕‿‿◕｡)づ</div>
+    <div class="cute-jumper">(っ＾▿＾)💨</div>
+    <div class="cute-jumper">(✿◠‿◠)</div>
+    <div class="cute-jumper">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</div>
+  </div>
+
+  <!-- Cherry Blossoms Script -->
+  <script>
+    const NUM_BLOSSOMS = 25;
+    for (let i = 0; i < NUM_BLOSSOMS; i++) {
+      const blossom = document.createElement('div');
+      blossom.classList.add('cherry-blossom');
+      blossom.style.left = `${Math.random() * 100}vw`;
+      blossom.style.animationDuration = `${5 + Math.random() * 5}s`;
+      blossom.style.top = `-${Math.random() * 100}px`;
+      document.body.appendChild(blossom);
+    }
+  </script>
+</body>
+</html>
